@@ -6,10 +6,14 @@
 <body>
     <divs id="app" class="container">
        <% if(typeof route!="undefined"){%>
+            
             <%if(route=="login"){%>
                 <%- include("../partials/login") %>
+            <%}else if(route=="register"){%>                
+                <%- include("../partials/register") %>
             <%}%>
-       <%}%>                            
+       <%}%>   
+
     </div>
     <script src="/bootstrap/js/bootstrap.bundle.min.js" ></script>
 </body>

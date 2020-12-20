@@ -10,4 +10,9 @@ router.get('/login', function(req,res,next){
   res.render('pages/app.ejs',{route:"login"});
 })
 
+router.get('/register', function(req,res,next){
+  res.render('pages/app.ejs',{route:"register"});
+});
+
+
 module.exports = router;
