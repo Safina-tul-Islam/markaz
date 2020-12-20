@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+    <divs id="app" class="container">
+       <% if(typeof route!="undefined"){%>
+            <%if(route=="login"){%>
+                <%- include("../partials/login") %>
+            <%}%>
+       <%}%>                            
+    </div>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>
