@@ -34,7 +34,7 @@
                            
             </div>
 
-            <form>
+            <form id="registerationForm">
 
                 <div class="input-group mb-4">
 
@@ -78,7 +78,7 @@
 
                 <div class="form-outline mb-4">
                  <button 
-                    onclick="validatePassword()"
+                    id="signUPButton"
                      class="btn btn-primary btn-lg form-control mb-4 btn-login">Sign
                         in</button>
                 </div>
@@ -94,18 +94,36 @@
 
 
     <script>
-        
+
+        function promptAlert(msg){
+            let alertBox = document.getElementById("alertbox");           
+            let alertStr = `<div onclick="this.remove()" class="alert alert-danger rounded-pill text-center" role="alert">${msg}
+                    </div>`;   
+            alertBox.innerHTML = alertStr;             
+        }    
+
+
+        document.getElementById("signUPButton").addEventListener("click", function(event){
+            event.preventDefault()
+            if(validatePassword()){
+                document.getElementById("registerationForm").submit();
+            }
+        });
       
         function validatePassword(){
             let p1 = document.getElementById("p1");
-            let p2 = document.getElementById("p2");
-            let alertBox = document.getElementById("alertbox");
-            var msg = "test"
-            let alertStr = `<div onclick="this.remove()" class="alert alert-danger rounded-pill text-center" role="alert">${msg}
-                
-                </div>`;      
-            alertBox.innerHTML = alertStr;      
-               
+            let p2 = document.getElementById("p2");  
+            console.log("i am validating password")         ;
+                if(p1.value!==p2.value) {
+                    alert('false');
+                    promptAlert("Passowrds Do not match");
+                    return false;     
+                }
+                if(p1.value.length<6){
+                    promptAlert("Password must atleast 6 character long");
+                    return false;     
+                }
+                return true;                           
         }
 
     </script>
