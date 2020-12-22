@@ -1,0 +1,129 @@
+<style>
+    .btn-login {
+        background-color: #03AFF8;
+        border-radius: 16px;
+        height: 3rem
+    }
+
+    body {
+        margin-top: 4%;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 80vh;
+        display: block;
+    }
+    h1{
+        padding: 16px;
+    }
+</style>
+
+<div class="card mb-3 mx-auto shadow" style="max-width: 840px;">
+    <div class="row g-0">
+        <div class="col-md-4 mx-auto d-none d-md-block">
+            <img src="images/toa-heftiba-7P-wAE__swQ-unsplash.jpg">
+
+        </div>
+        <div class="card-body col-md-8">
+            <div class="text-center">
+              
+                <h1 class="card-title m-40">Sign Up </h1>
+            </div>
+            <div id="alertbox" class="form-outline mb-4">                      
+                           
+            </div>
+
+            <form id="registerationForm">
+
+                <div class="input-group mb-4">
+
+
+                    <input type="text" class="form-control" placeholder="First name">
+
+
+                    <input type="text" class="form-control" placeholder="Last name">
+
+
+                </div>
+
+
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    </div>
+                    <!-- Email input -->
+                    <input type="text" name="email" class="form-control" placeholder="Email" aria-label="Username"
+                        aria-describedby="basic-addon1" required>
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    </div>
+                    <!-- Password input -->
+                    <input id="p1" type="password" class="form-control" name="password" placeholder="Password"
+                        required>
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    </div>
+                    <!-- Password input -->
+                    <input 
+                        id="p2" type="password" class="form-control" name="passwordconfirm"
+                        placeholder="Confirm Password" required>
+                </div>
+
+
+
+
+                <div class="form-outline mb-4">
+                 <button 
+                    id="signUPButton"
+                     class="btn btn-primary btn-lg form-control mb-4 btn-login">Sign
+                        in</button>
+                </div>
+                
+            </form>
+
+        </div>
+        <div class="card-footer text-muted">
+            <p class="text-end"> Already a member? <a href="/login">Login</a> instead</p>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function promptAlert(msg){
+            let alertBox = document.getElementById("alertbox");           
+            let alertStr = `<div onclick="this.remove()" class="alert alert-danger rounded-pill text-center" role="alert">${msg}
+                    </div>`;   
+            alertBox.innerHTML = alertStr;             
+        }    
+
+
+        document.getElementById("signUPButton").addEventListener("click", function(event){
+            event.preventDefault()
+            if(validatePassword()){
+                document.getElementById("registerationForm").submit();
+            }
+        });
+      
+        function validatePassword(){
+            let p1 = document.getElementById("p1");
+            let p2 = document.getElementById("p2");  
+            console.log("i am validating password")         ;
+                if(p1.value!==p2.value) {
+                    alert('false');
+                    promptAlert("Passowrds Do not match");
+                    return false;     
+                }
+                if(p1.value.length<6){
+                    promptAlert("Password must atleast 6 character long");
+                    return false;     
+                }
+                return true;                           
+        }
+
+    </script>
