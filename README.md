@@ -7,3 +7,6 @@ Back end application in Node.js for social interaction and managing book quotes.
 [Faker](https://www.npmjs.com/package/faker)
 
 
+## Git Commands 
+
+```git remote set-url origin https://name:password@github.com/repo.git```
