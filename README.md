@@ -19,10 +19,10 @@ git remote -v
 =======
 ## Things TODO List:
  - [x] Bootstrap templated tested
- - [ ] Add Login Page
- - [ ] Add Signup Page
- - [ ] Add SQLite Database
- - [ ] Add Sequelize ORM
- - [ ] Create User models and controllers with repository design pattern
+ - [x] Add Login Page
+ - [x] Add Signup Page
+ - [x] Add SQLite Database
+ - [x] Add Sequelize ORM
+ - [x] Create User models and controllers with repository design pattern
  - [ ] Add Passport.js and Authentication to work
 
