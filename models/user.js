@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }, 
     password:DataTypes.TEXT
+    
   }, {
     sequelize,
     modelName: 'User',
