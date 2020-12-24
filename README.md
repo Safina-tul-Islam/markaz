@@ -24,5 +24,5 @@ git remote -v
  - [x] Add SQLite Database
  - [x] Add Sequelize ORM
  - [x] Create User models and controllers with repository design pattern
- - [ ] Add Passport.js and Authentication to work
+ - [x] Add Passport.js and Authentication to work
 
